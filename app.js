@@ -5,8 +5,9 @@ const bodyParser = require("body-parser");
 const expressValidator = require("express-validator");
 const flash = require("connect-flash");
 const session = require("express-session");
+const config = require("./config/database");
 
-mongoose.connect("mongodb://localhost/nodekb");
+mongoose.connect(config.database);
 let db = mongoose.connection;
 
 //teste de conecção
